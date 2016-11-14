@@ -15,9 +15,15 @@
       <div class="nav-wrapper container">
         <a class="brand-logo" href="<%= root_path %>">Leiestedet</a>
         <ul class="nav-mobile right hide-on-med-and-down">
-          <li><a href="">1</a></li>
-          <li><a href="">2</a></li>
-          <li><a href="">3</a></li>
+          <li><a href="<%= listing_index_path %>">Annonser</a></li>
+          <li><a href="<%= root_path %>">Om oss</a></li>
+          <% if user_signed_in? %>
+            <li><%= link_to 'Ny annonse', new_listing_path %></li>
+            <li><%= link_to 'Logg ut', destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <li><a href="<%= new_user_session_path %>">Logg inn</a></li>
+            <li><a href="<%= new_user_registration_path %>">Registrer deg</a></li>
+          <% end %>
         </ul>
       </div>
     </nav>
