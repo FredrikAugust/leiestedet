@@ -1,0 +1,7 @@
+<h1>Annonser</h1>
+
+<% @listings.each do |listing| %>
+  <h2><%= listing.title %></h2>
+  <p><%= listing.description %></p>
+  <small>Listing by: <%= listing.user.email %></small>
+<% end %>

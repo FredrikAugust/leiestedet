@@ -11,6 +11,19 @@
   </head>
 
   <body>
-    <%= yield %>
+    <nav>
+      <div class="nav-wrapper container">
+        <a class="brand-logo" href="<%= root_path %>">Leiestedet</a>
+        <ul class="nav-mobile right hide-on-med-and-down">
+          <li><a href="">1</a></li>
+          <li><a href="">2</a></li>
+          <li><a href="">3</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  root to: 'static_page#about'
+  root to: 'listing#index'
 end
