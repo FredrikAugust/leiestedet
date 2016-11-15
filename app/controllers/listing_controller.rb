@@ -10,9 +10,7 @@ class ListingController < ApplicationController
   end
 
   def create
-    new_listing = Listing.new
-    new_listing.title =  params[:listing][:title]
-    new_listing.description = params[:listing][:description]
+    new_listing = Listing.new(params[:listing])
     new_listing.user = current_user
 
     if new_listing.save
