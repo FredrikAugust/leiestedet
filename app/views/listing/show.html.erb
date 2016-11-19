@@ -1,0 +1,12 @@
+<h1><%= @listing.title %></h1>
+<p class="small">Opprettet av: <%= @listing.user.email %></p>
+
+<h4>Beskrivelse</h4>
+
+<p><%= @listing.description %></p>
+
+<% if @listing.user == current_user %>
+  <hr>
+  <%= link_to "Slett annonse", listing_path(@listing),
+    method: :delete, class: "btn red darken-4" %>
+<% end %>
