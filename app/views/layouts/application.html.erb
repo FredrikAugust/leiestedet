@@ -31,5 +31,11 @@
     <div class="container">
       <%= yield %>
     </div>
+
+    <script>
+      <% flash.each do |key, value| %>
+        Materialize.toast("<%= value %>", 3000);
+      <% end %>
+    </script>
   </body>
 </html>
