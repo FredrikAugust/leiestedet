@@ -10,14 +10,13 @@ class ListingController < ApplicationController
   end
 
   def create
-    new_listing = Listing.new(params[:listing])
-    new_listing.user = current_user
+    @listing = Listing.new(listing_params)
+    @listing.user = current_user
 
-    if new_listing.save
+    if @listing.save
       redirect_to listing_index_path, notice: 'Annonsen din er publisert'
     else
-      @listing = new_listing
-      redirect_to new_listing, error: 'Det var en feil med annonsen din'
+      render new_listing_path, error: 'Det var en feil med annonsen din'
     end
   end
 
@@ -29,7 +28,7 @@ class ListingController < ApplicationController
       return redirect_to listing_index_path, notice: 'Annonsen ble slettet'
     else
       return redirect_to listing_path(listing),
-        error: 'Du har ikke rettigheter til aa slette denne annonsen'
+                         error: 'Du har ikke rettigheter nok til dette'
     end
   end
 
@@ -38,5 +37,11 @@ class ListingController < ApplicationController
 
   def show
     @listing = Listing.find(params['id'])
+  end
+
+  private
+
+  def listing_params
+    params.require(:listing).permit(:title, :description)
   end
 end
