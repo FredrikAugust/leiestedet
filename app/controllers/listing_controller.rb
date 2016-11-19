@@ -16,7 +16,7 @@ class ListingController < ApplicationController
     if @listing.save
       redirect_to listing_index_path, notice: 'Annonsen din er publisert'
     else
-      render new_listing_path, error: 'Det var en feil med annonsen din'
+      render 'new'
     end
   end
 
@@ -32,7 +32,18 @@ class ListingController < ApplicationController
     end
   end
 
+  def edit
+    @listing = Listing.find(params[:id])
+  end
+
   def update
+    @listing = Listing.find(params[:id])
+
+    if @listing.update_attributes(listing_params)
+      redirect_to listing_path(@listing), notice: 'Din annonse har blitt endret'
+    else
+      render 'edit'
+    end
   end
 
   def show

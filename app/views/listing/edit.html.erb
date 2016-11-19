@@ -1,6 +1,6 @@
-<h1>Lag en ny annonse</h1>
+<h1>Endre annonse</h1>
 
-<%= form_for @listing, url: {action: :create} do |f| %>
+<%= form_for @listing, url: {action: :update} do |f| %>
   <% if @listing.errors.messages.length > 0 %>
     <div class="errors">
       <%= raw concat_errors @listing.errors.messages %>
@@ -10,5 +10,5 @@
   <%= f.text_field :title %>
   <%= f.label :description %>
   <%= f.text_area :description, class: 'materialize-textarea' %>
-  <%= f.submit 'Lag annonse', class: 'btn' %>
+  <%= f.submit 'Endre annonse', class: 'btn' %>
 <% end %>
