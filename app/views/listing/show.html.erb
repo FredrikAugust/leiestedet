@@ -1,5 +1,8 @@
 <h1><%= @listing.title %></h1>
-<p class="small">Opprettet av: <%= @listing.user.email %></p>
+<div class="chip"><%= @listing.price %>NOK</div>
+<p class="small">Opprettet av: <%= @listing.user.first_name + ' ' +
+                                   @listing.user.last_name %></p>
+<p class="small">Sted: <%= @listing.location %></p>
 
 <h4>Beskrivelse</h4>
 

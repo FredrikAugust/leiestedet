@@ -29,7 +29,7 @@
         </ul>
         <ul id="nav-mobile" class="side-nav">
           <li><a href="<%= listing_index_path %>">Annonser</a></li>
-          <li><a href="<%= root_path %>">Om oss</a></li>
+          <li><%= link_to 'Om oss', about_path %></li>
           <% if user_signed_in? %>
             <li><%= link_to 'Ny annonse', new_listing_path %></li>
             <li><%= link_to 'Logg ut', destroy_user_session_path, method: :delete %></li>

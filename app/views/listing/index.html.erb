@@ -3,7 +3,7 @@
 
 <% @listings.each do |listing| %>
   <h2><%= link_to listing.title, listing_path(listing) %></h2>
-  <p><%= listing.description %></p>
   <small>Annonse laget av: <%= listing.user.first_name + ' ' + listing.user.last_name +
                                ', ' + listing.location %></small>
+  <p><%= listing.description %></p>
 <% end %>
