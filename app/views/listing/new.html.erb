@@ -7,8 +7,16 @@
     </div>
   <% end %>
   <%= f.label :title %>
-  <%= f.text_field :title %>
+  <%= f.text_field :title, autofocus: true %>
+
+  <%= f.label :location %>
+  <%= f.text_field :location%>
+
+  <%= f.label :price %>
+  <%= f.number_field :price %>
+
   <%= f.label :description %>
   <%= f.text_area :description, class: 'materialize-textarea' %>
+
   <%= f.submit 'Lag annonse', class: 'btn' %>
 <% end %>
