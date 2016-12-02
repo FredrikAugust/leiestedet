@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   root to: 'static_page#index'
 
   #static_page
-  get 'about', to: 'static_page#index'
+  get '/about', action: :index, controller: :static_page
 end
