@@ -2,9 +2,9 @@ FactoryGirl.define do
   factory :listing do
     user
 
-    title 'Brown Gown'
-    description 'Very little used brown gown. In perfect condition.'
-    price 100
-    location 'Oslo, Norway'
+    title Faker::Beer.name
+    description Faker::ChuckNorris.fact
+    price Faker::Number.number(3)
+    location Faker::GameOfThrones.city
   end
 end

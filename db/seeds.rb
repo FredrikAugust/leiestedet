@@ -8,17 +8,25 @@
 
 users = User.create([
   {
-    first_name: 'Test', last_name: 'User', email: 'test@test.com',
+    first_name: Faker::Name.first_name, last_name: Faker::Name.last_name,
+    email: Faker::Internet.email,
     password: 'password', password_confirmation: 'password'
   }
 ])
 
 listings = Listing.create([
   {
-    title: 'Test post please ignore',
-    description: 'This is a test post, please ignore it.',
-    location: 'Oslo, Norway',
-    price: 100,
-    user: User.where(email: 'test@test.com').first
+    title: Faker::Beer.name,
+    description: Faker::ChuckNorris.fact,
+    location: Faker::GameOfThrones.city,
+    price: Faker::Number.number(3),
+    user: User.first
+  },
+  {
+    title: Faker::Beer.name,
+    description: Faker::ChuckNorris.fact,
+    location: Faker::GameOfThrones.city,
+    price: Faker::Number.number(3),
+    user: User.first
   }
 ])

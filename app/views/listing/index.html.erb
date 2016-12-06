@@ -2,8 +2,10 @@
 <hr>
 
 <% @listings.each do |listing| %>
-  <h2><%= link_to listing.title, listing_path(listing) %></h2>
-  <small>Annonse laget av: <%= listing.user.first_name + ' ' + listing.user.last_name +
-                               ', ' + listing.location %></small>
-  <p><%= listing.description %></p>
+  <div class="listing">
+    <h4><%= link_to listing.title, listing_path(listing) %></h4>
+    <small>Annonse laget av: <%= listing.user.first_name + ' ' + listing.user.last_name +
+      ', ' + listing.location %></small>
+    <p><div class="chip"><%= listing.price%>NOK</div><%= listing.description %></p>
+  </div>
 <% end %>
