@@ -49,7 +49,16 @@ class ListingController < ApplicationController
   end
 
   def update
-    @listing = Listing.find(params[:id])
+    @listing = Listing.find_by(id: params[:id])
+
+    unless @listing
+      return redirect_to listing_index_path, notice: 'Den annonsen finnes ikke'
+    end
+
+    unless @listing.user == current_user
+      return redirect_to listing_path(@listing),
+        notice: 'Du er ikke autorisert til å gjøre endringer til denne annonsen'
+    end
 
     if @listing.update_attributes(listing_params)
       redirect_to listing_path(@listing), notice: 'Din annonse har blitt endret'
@@ -59,7 +68,11 @@ class ListingController < ApplicationController
   end
 
   def show
-    @listing = Listing.find(params['id'])
+    @listing = Listing.find_by(id: params['id'])
+
+    unless @listing
+      return redirect_to listing_index_path, notice: 'Den annonsen finnes ikke'
+    end
   end
 
   private

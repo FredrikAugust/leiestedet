@@ -1,0 +1,46 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+AddLocationAndPriceToListing	db/migrate/20161202132842_add_location_and_price_to_listing.rb	/^class AddLocationAndPriceToListing < ActiveRecord::Migration[5.0]$/;"	c
+AddNameToUser	db/migrate/20161202132643_add_name_to_user.rb	/^class AddNameToUser < ActiveRecord::Migration[5.0]$/;"	c
+Application	config/application.rb	/^  class Application < Rails::Application$/;"	c	class:Leiestedet
+ApplicationCable	app/channels/application_cable/channel.rb	/^module ApplicationCable$/;"	m
+ApplicationCable	app/channels/application_cable/connection.rb	/^module ApplicationCable$/;"	m
+ApplicationController	app/controllers/application_controller.rb	/^class ApplicationController < ActionController::Base$/;"	c
+ApplicationHelper	app/helpers/application_helper.rb	/^module ApplicationHelper$/;"	m
+ApplicationJob	app/jobs/application_job.rb	/^class ApplicationJob < ActiveJob::Base$/;"	c
+ApplicationMailer	app/mailers/application_mailer.rb	/^class ApplicationMailer < ActionMailer::Base$/;"	c
+ApplicationRecord	app/models/application_record.rb	/^class ApplicationRecord < ActiveRecord::Base$/;"	c
+Channel	app/channels/application_cable/channel.rb	/^  class Channel < ActionCable::Channel::Base$/;"	c	class:ApplicationCable
+Connection	app/channels/application_cable/connection.rb	/^  class Connection < ActionCable::Connection::Base$/;"	c	class:ApplicationCable
+CreateListings	db/migrate/20161114171356_create_listings.rb	/^class CreateListings < ActiveRecord::Migration[5.0]$/;"	c
+DeviseCreateUsers	db/migrate/20161114161156_devise_create_users.rb	/^class DeviseCreateUsers < ActiveRecord::Migration[5.0]$/;"	c
+Leiestedet	config/application.rb	/^module Leiestedet$/;"	m
+Listing	app/models/listing.rb	/^class Listing < ApplicationRecord$/;"	c
+ListingController	app/controllers/listing_controller.rb	/^class ListingController < ApplicationController$/;"	c
+ListingHelper	app/helpers/listing_helper.rb	/^module ListingHelper$/;"	m
+RegistrationsController	app/controllers/registrations_controller.rb	/^class RegistrationsController < Devise::RegistrationsController$/;"	c
+StaticPageController	app/controllers/static_page_controller.rb	/^class StaticPageController < ApplicationController$/;"	c
+StaticPageHelper	app/helpers/static_page_helper.rb	/^module StaticPageHelper$/;"	m
+User	app/models/user.rb	/^class User < ApplicationRecord$/;"	c
+account_update_params	app/controllers/registrations_controller.rb	/^  def account_update_params$/;"	f	class:RegistrationsController
+change	db/migrate/20161114161156_devise_create_users.rb	/^  def change$/;"	f	class:DeviseCreateUsers
+change	db/migrate/20161114171356_create_listings.rb	/^  def change$/;"	f	class:CreateListings
+change	db/migrate/20161202132643_add_name_to_user.rb	/^  def change$/;"	f	class:AddNameToUser
+change	db/migrate/20161202132842_add_location_and_price_to_listing.rb	/^  def change$/;"	f	class:AddLocationAndPriceToListing
+concat_errors	app/helpers/listing_helper.rb	/^  def concat_errors(errors)$/;"	f	class:ListingHelper
+create	app/controllers/listing_controller.rb	/^  def create$/;"	f	class:ListingController
+destroy	app/controllers/listing_controller.rb	/^  def destroy$/;"	f	class:ListingController
+edit	app/controllers/listing_controller.rb	/^  def edit$/;"	f	class:ListingController
+index	app/controllers/listing_controller.rb	/^  def index$/;"	f	class:ListingController
+index	app/controllers/static_page_controller.rb	/^  def index$/;"	f	class:StaticPageController
+listing_params	app/controllers/listing_controller.rb	/^  def listing_params$/;"	f	class:ListingController
+new	app/controllers/listing_controller.rb	/^  def new$/;"	f	class:ListingController
+show	app/controllers/listing_controller.rb	/^  def show$/;"	f	class:ListingController
+sign_up_params	app/controllers/registrations_controller.rb	/^  def sign_up_params$/;"	f	class:RegistrationsController
+system!	bin/setup	/^def system!(*args)$/;"	f
+system!	bin/update	/^def system!(*args)$/;"	f
+update	app/controllers/listing_controller.rb	/^  def update$/;"	f	class:ListingController
