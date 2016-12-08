@@ -21,14 +21,18 @@ class ListingController < ApplicationController
   end
 
   def destroy
-    listing = Listing.find(params['id'])
+    listing = Listing.find_by(id: params['id'])
+
+    unless listing
+      return redirect_to listing_index_path, error: 'Den annonsen finnes ikke'
+    end
 
     if listing.user == current_user
       listing.delete
       return redirect_to listing_index_path, notice: 'Annonsen ble slettet'
     else
       return redirect_to listing_path(listing),
-                         error: 'Du har ikke rettigheter nok til dette'
+                         error: 'Du har ikke rettigheter til dette'
     end
   end
 
