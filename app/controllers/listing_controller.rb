@@ -24,7 +24,7 @@ class ListingController < ApplicationController
     listing = Listing.find_by(id: params['id'])
 
     unless listing
-      return redirect_to listing_index_path, error: 'Den annonsen finnes ikke'
+      return redirect_to listing_index_path, notice: 'Den annonsen finnes ikke'
     end
 
     if listing.user == current_user
@@ -37,7 +37,15 @@ class ListingController < ApplicationController
   end
 
   def edit
-    @listing = Listing.find(params[:id])
+    @listing = Listing.find_by(id: params[:id])
+
+    unless @listing
+      return redirect_to listing_index_path, notice: 'Den annonsen finnes ikke'
+    end
+
+    unless @listing.user == current_user
+      return redirect_to listing_path(@listing), notice: 'Du eier ikke denne annonsen'
+    end
   end
 
   def update

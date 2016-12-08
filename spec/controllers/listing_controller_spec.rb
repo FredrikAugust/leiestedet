@@ -155,4 +155,46 @@ RSpec.describe ListingController, type: :controller do
         .to change{ Listing.count }.by(-1)
     end
   end
+
+  describe 'edit' do
+    let!(:listing) { create(:listing) }
+
+    it 'redirects to login if user is not authenticated' do
+      get :edit, params: { id: listing.id }
+
+      expect(response).to redirect_to(action: :new, controller: 'devise/sessions')
+    end
+
+    it 'redirects to listing if user does not own the listing' do
+      sign_in create(:user)
+
+      get :edit, params: { id: listing.id }
+
+      expect(response).to redirect_to(listing_path(listing))
+    end
+
+    it 'redirects to all listings if listing does not exist' do
+      sign_in listing.user
+
+      get :edit, params: { id: 123123 }
+
+      expect(response).to redirect_to(listing_index_path)
+    end
+
+    it 'renders the edit page if user owns it and it exists' do
+      sign_in listing.user
+
+      get :edit, params: { id: listing.id }
+
+      expect(response).to render_template(:edit)
+    end
+
+    it 'assigns the correct listing when editing' do
+      sign_in listing.user
+
+      get :edit, params: { id: listing.id }
+
+      expect(assigns(:listing)).to eq(listing)
+    end
+  end
 end
