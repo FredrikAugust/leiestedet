@@ -20,13 +20,13 @@ listings = Listing.create([
     description: Faker::ChuckNorris.fact,
     location: Faker::GameOfThrones.city,
     price: Faker::Number.number(3),
-    user: User.first
+    user: User.last
   },
   {
     title: Faker::Beer.name,
     description: Faker::ChuckNorris.fact,
     location: Faker::GameOfThrones.city,
     price: Faker::Number.number(3),
-    user: User.first
+    user: User.last
   }
 ])
