@@ -16,4 +16,7 @@ test:
   password: postgres
 
 production:
-  url: <%= ENV['DATABASE_URL'] %>
+  <<: *default
+  database: leiestedet_production
+  username: leiestedet
+  password: <%= ENV['LEIESTEDET_DATABASE_PASSWORD'] %>
