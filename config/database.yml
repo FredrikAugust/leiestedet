@@ -17,6 +17,3 @@ test:
 
 production:
   <<: *default
-  database: leiestedet_production
-  username: leiestedet
-  password: <%= ENV['LEIESTEDET_DATABASE_PASSWORD'] %>
