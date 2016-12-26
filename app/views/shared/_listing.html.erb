@@ -1,0 +1,5 @@
+<div class="listing">
+  <h4><%= link_to listing.title, listing_path(listing) %></h4>
+  <small>Annonse laget av: <%= link_to full_name(listing.user), profile_path(id: listing.user.id) %></small>
+  <p><div class="chip"><%= listing.price%>NOK</div><%= listing.description %></p>
+</div>

@@ -9,7 +9,5 @@ class ProfileController < ApplicationController
         redirect_to new_user_session_path
       end
     end
-
-    @listings = Listing.find_by(user: @user)
   end
 end
