@@ -1,8 +1,15 @@
 class ProfileController < ApplicationController
-  before_action :authenticate_user!, only: [:show]
-
   def show
-    @user = current_user
+    if params[:id]
+      @user = User.find_by(id: params[:id])
+    else
+      if user_signed_in?
+        @user = current_user
+      else
+        redirect_to new_user_session_path
+      end
+    end
+
     @listings = Listing.find_by(user: @user)
   end
 end

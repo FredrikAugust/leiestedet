@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :listing
 
   get 'profile', to: 'profile#show'
+  get 'profile/:id', to: 'profile#show'
 
   authenticated do
     root to: 'listing#index', as: :authenticated_root
