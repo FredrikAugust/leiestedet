@@ -1,7 +1,6 @@
 <h1><%= @listing.title %></h1>
 <div class="chip"><%= @listing.price %>NOK</div>
 <p class="small">Opprettet av: <%= link_to full_name(@listing.user), profile_path(id: @listing.user.id) %></p>
-<p class="small">Sted: <%= @listing.location %></p>
 
 <h4>Beskrivelse</h4>
 

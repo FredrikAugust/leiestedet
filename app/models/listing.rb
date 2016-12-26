@@ -1,5 +1,5 @@
 class Listing < ApplicationRecord
-  validates :title, :description, :location, :price, presence: true
+  validates :title, :description, :price, presence: true
 
   validates :title, length: { minimum: 2, maximum: 50 }
 
