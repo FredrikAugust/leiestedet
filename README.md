@@ -23,3 +23,7 @@ The website will feature a lot of the same features as [finn](https://finn.no); 
 ### Colorscheme
 
 To come.
+
+## License
+
+Leiestedet is released under the GNU AGPL-v3
