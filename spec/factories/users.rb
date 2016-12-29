@@ -12,6 +12,7 @@ FactoryGirl.define do
         "EhtPc2xvdmVpZW4sIFRyb25kaGVpbSwgTm9yZ2U"
       ].sample
     end
+    location { Faker::Address.street_address }
     password 'password'
     password_confirmation { password }
   end

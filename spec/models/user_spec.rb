@@ -13,11 +13,6 @@ RSpec.describe User, type: :model do
     end
 
     context 'first name' do
-      it 'contains no errors if first name is valid' do
-        @user.save
-        expect(@user.errors[:first_name].size).to eq(0)
-      end
-
       it 'fails if without non-existant' do
         @user.first_name = ''
         expect(@user).to_not be_valid
@@ -35,11 +30,6 @@ RSpec.describe User, type: :model do
     end
 
     context 'last name' do
-      it 'contains no errors if value is valid' do
-        @user.save
-        expect(@user.errors[:last_name].size).to eq(0)
-      end
-
       it 'fails to validate without value' do
         @user.last_name = ''
         expect(@user).to_not be_valid
@@ -52,6 +42,30 @@ RSpec.describe User, type: :model do
 
       it 'fails if is longer than 30 chars' do
         @user.last_name = 'K' * 31
+        expect(@user).to_not be_valid
+      end
+    end
+
+    context 'location' do
+      it 'fails to validate without value' do
+        @user.location = ''
+        expect(@user).to_not be_valid
+      end
+
+      it "fails if it's longer than 100 chars" do
+        @user.location = 'a' * 101
+        expect(@user).to_not be_valid
+      end
+    end
+
+    context 'place_id' do
+      it 'fails to validate without value' do
+        @user.place_id = ''
+        expect(@user).to_not be_valid
+      end
+
+      it "fails if it's longer than 100 chars" do
+        @user.place_id = 'a' * 101
         expect(@user).to_not be_valid
       end
     end
