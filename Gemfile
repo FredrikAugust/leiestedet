@@ -15,6 +15,7 @@ gem 'jbuilder', '~> 2.5'
 # authentication
 gem 'devise'
 # image uploading
+gem 'mini_magick'
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 
 group :development, :test do
