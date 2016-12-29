@@ -28,6 +28,8 @@ class ListingController < ApplicationController
     end
 
     if listing.user == current_user
+      listing.remove_listingimages!
+      listing.save
       listing.delete
       return redirect_to listing_index_path, notice: 'Annonsen ble slettet'
     else
@@ -78,6 +80,7 @@ class ListingController < ApplicationController
   private
 
   def listing_params
-    params.require(:listing).permit(:title, :description, :price, {listingimages: []})
+    params.require(:listing).permit(:title, :description, :price,
+                                    {listingimages: []})
   end
 end
