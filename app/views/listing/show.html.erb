@@ -10,6 +10,8 @@
   <em>Ingen bilder</em>
 <% end %>
 
+<%= render partial: 'shared/map', locals: { place_id: @listing.user.place_id } %>
+
 <h4>Beskrivelse</h4>
 
 <p><%= @listing.description %></p>

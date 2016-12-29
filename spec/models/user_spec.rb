@@ -70,5 +70,17 @@ RSpec.describe User, type: :model do
       end
     end
   end
+
+  context 'dependencies' do
+    context 'listing' do
+      it 'deletes all listings that belong to the user when user is deleted' do
+        create(:listing, user: @user)
+
+        expect {
+          @user.destroy
+        }.to change { Listing.count }.by(-1)
+      end
+    end
+  end
 end
 

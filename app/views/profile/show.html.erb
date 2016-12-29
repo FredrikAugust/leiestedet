@@ -8,6 +8,7 @@
     <ul>
       <li>Epost: <%= @user.email %></li>
     </ul>
+    <%= render partial: 'shared/map', locals: { place_id: @user.place_id } %>
   </div>
 
   <%# listings by this user %>
