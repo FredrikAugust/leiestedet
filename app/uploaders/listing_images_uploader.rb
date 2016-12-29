@@ -22,11 +22,12 @@ class ListingImagesUploader < CarrierWave::Uploader::Base
   # end
 
   # Process files as they are uploaded:
-  # process scale: [200, 300]
-  #
-  # def scale(width, height)
-  #   # do something
-  # end
+  process resize_to_fit: [1280, 720]
+  process convert: 'jpg'
+
+  def filename
+    super.chomp(File.extname(super)) + '.jpg' if original_filename.present?
+  end
 
   # Create different versions of your uploaded files:
   version :thumb do
