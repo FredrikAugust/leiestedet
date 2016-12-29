@@ -1,3 +1,6 @@
+require 'json'
+require 'net/http'
+
 class ListingController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
@@ -81,6 +84,6 @@ class ListingController < ApplicationController
 
   def listing_params
     params.require(:listing).permit(:title, :description, :price,
-                                    {listingimages: []})
+                                    { listingimages: [] })
   end
 end
