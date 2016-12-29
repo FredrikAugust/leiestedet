@@ -11,7 +11,7 @@ users = User.create([
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     email: Faker::Internet.email,
-    place_id: { locations.sample }
+    place_id: locations.sample,
     password: 'password', password_confirmation: 'password'
   }
 ])

@@ -15,5 +15,16 @@
   <%= f.label :description %>
   <%= f.text_area :description, class: 'materialize-textarea' %>
 
+  <%= f.label :listingimages %>
+  <div class="file-field input-field">
+    <div class="btn">
+      <span>Velg bilder</span>
+      <input placeholder='Velg én eller fler bilder' type="file" multiple name='listing[listingimages][]' id='listing_listingimages'>
+    </div>
+    <div class="file-path-wrapper">
+      <input class="file-path validate" type="text">
+    </div>
+  </div>
+
   <%= f.submit 'Lag annonse', class: 'btn' %>
 <% end %>

@@ -1,7 +1,9 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
+gem 'rails', '> 5.0.0'
+# postgres
 gem 'pg', '~> 0.18'
+# server
 gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -10,14 +12,22 @@ gem 'materialize-sass'
 gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
+# authentication
 gem 'devise'
+# image uploading
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 
 group :development, :test do
   gem 'byebug', platform: :mri
+  # spec
   gem 'rspec-rails'
+  # generate fixtures
   gem 'factory_girl_rails'
+  # clean db after each test
   gem 'database_cleaner'
+  # extension for rspec so I can test controllers
   gem 'rails-controller-testing'
+  # generate "random" data to use in tests/seeds
   gem 'faker'
 end
 
@@ -26,6 +36,7 @@ group :development do
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  # watch for changes and run spec
   gem 'guard-rspec', require: false
 end
 
