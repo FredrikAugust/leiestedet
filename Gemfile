@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '>= 2.2.6'
+
 gem 'rails', '> 5.0.0'
 # postgres
 gem 'pg', '~> 0.18'
@@ -30,6 +32,8 @@ group :development, :test do
   gem 'rails-controller-testing'
   # generate "random" data to use in tests/seeds
   gem 'faker'
+  # load env vars from .env
+  gem 'dotenv-rails'
 end
 
 group :development do
