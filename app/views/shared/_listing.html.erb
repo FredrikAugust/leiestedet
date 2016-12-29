@@ -1,4 +1,10 @@
 <div class="listing">
+  <% if listing.listingimages[0] %>
+    <%= image_tag listing.listingimages[0].thumb.url %>
+  <% else %>
+    <p>Ingen bilder.</p>
+  <% end %>
+
   <h4><%= link_to listing.title, listing_path(listing) %></h4>
   <small>Annonse laget av: <%= link_to full_name(listing.user), profile_path(id: listing.user.id) %></small>
   <p><div class="chip"><%= listing.price%>NOK</div><%= listing.description %></p>
