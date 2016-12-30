@@ -6,3 +6,29 @@
     display: block;
   }
 }
+
+// Search bar
+input[type='text']#search {
+  margin-bottom: 0;
+}
+
+#search-div {
+  margin-top: 0;
+}
+
+// Listing on #index
+.listing{
+  position: relative;
+  margin-bottom: 10px;
+
+  img{
+    width: 100% !important;
+  }
+
+  .price {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+}
+
