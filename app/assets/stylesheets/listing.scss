@@ -32,3 +32,23 @@ input[type='text']#search {
   }
 }
 
+// Listing on listing#show
+.listing-title {
+  margin-bottom: 0;
+}
+
+.listing-name {
+  margin-top: 0;
+}
+
+.listing-contactinfo * {
+  vertical-align: middle;
+}
+
+.listing-detail .video-container {
+  margin-top: 20px;
+}
+
+.listing-images {
+  margin-top: 1.78rem;
+}
