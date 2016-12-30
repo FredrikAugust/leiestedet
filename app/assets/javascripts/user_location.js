@@ -1,5 +1,5 @@
 $(document).on('turbolinks:load', function () {
-  if ($('#new_user').length > 0) {
+  if ($('form input#user_location').length > 0) {
     var autocomplete = new google.maps.places.Autocomplete(
       document.getElementById('user_location')
     );
