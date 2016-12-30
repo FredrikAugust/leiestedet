@@ -16,3 +16,5 @@
 //= require materialize
 //= require static_page
 //= require listing
+//= require gmaps
+//= require user_location
