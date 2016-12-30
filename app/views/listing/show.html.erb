@@ -1,8 +1,16 @@
 <h1><%= @listing.title %></h1>
 <div class="chip"><%= @listing.price %>NOK</div>
-<p class="small">Opprettet av: <%= @listing.user.first_name + ' ' +
-                                   @listing.user.last_name %></p>
-<p class="small">Sted: <%= @listing.location %></p>
+<p class="small">Opprettet av: <%= link_to full_name(@listing.user), profile_path(id: @listing.user.id) %></p>
+
+<% if @listing.listingimages[0] %>
+  <% @listing.listingimages.each do |image| %>
+    <%= image_tag image.url, class: 'responsive-img' %>
+  <% end %>
+<% else %>
+  <em>Ingen bilder</em>
+<% end %>
+
+<%= render partial: 'shared/map', locals: { place_id: @listing.user.place_id } %>
 
 <h4>Beskrivelse</h4>
 

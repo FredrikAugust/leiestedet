@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require materialize
-//= require_tree .
+//= require static_page
+//= require listing

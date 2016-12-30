@@ -1,0 +1,19 @@
+<h1><%= @user.first_name + " " + @user.last_name %></h1>
+<p class='small'>Medlem siden: <%= @user.created_at.strftime("%d/%m-%Y") %></p>
+
+<div class="row">
+  <%# contact information %>
+  <div class="col s12 m5 push-m7">
+    <h3>Kontakt&shy;informasjon</h3>
+    <ul>
+      <li>Epost: <%= @user.email %></li>
+    </ul>
+    <%= render partial: 'shared/map', locals: { place_id: @user.place_id } %>
+  </div>
+
+  <%# listings by this user %>
+  <div class="col s12 m7 pull-m5">
+    <h3>Annonser</h3>
+    <%= render partial: 'shared/listing', collection: @user.listings, as: :listing %>
+  </div>
+</div>

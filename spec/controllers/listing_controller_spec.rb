@@ -72,7 +72,6 @@ RSpec.describe ListingController, type: :controller do
         listing: {
           title: Faker::Beer.name,
           description: Faker::ChuckNorris.fact,
-          location: Faker::GameOfThrones.city,
           price: Faker::Number.number(3)
         }
       }
@@ -114,7 +113,7 @@ RSpec.describe ListingController, type: :controller do
     it 'does not create a new listing if invalid params' do
       sign_in user
 
-      listing_params[:listing][:location] = ''
+      listing_params[:listing][:title] = ''
 
       expect{ post :create, params: listing_params }
         .to change{ Listing.count }.by(0)
