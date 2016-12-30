@@ -4,7 +4,7 @@ $(document).on('turbolinks:load', function () {
       document.getElementById('user_location')
     );
 
-    $('#new_user').on('submit', function (e) {
+    $('#new_user,#edit_user').on('submit', function (e) {
       $('input#user_place_id[type="hidden"]').val(autocomplete.getPlace().place_id);
     });
   }
