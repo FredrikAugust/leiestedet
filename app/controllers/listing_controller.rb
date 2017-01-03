@@ -17,7 +17,7 @@ class ListingController < ApplicationController
     @listing.user = current_user
 
     if @listing.save
-      redirect_to listing_index_path, notice: 'Annonsen din er publisert'
+      redirect_to listing_path(@listing), notice: 'Annonsen din er publisert'
     else
       render 'new'
     end
