@@ -107,7 +107,7 @@ RSpec.describe ListingController, type: :controller do
 
       post :create, params: listing_params
 
-      expect(response).to redirect_to(action: :index, controller: :listing)
+      expect(response).to redirect_to(listing_path(Listing.last))
     end
 
     it 'does not create a new listing if invalid params' do

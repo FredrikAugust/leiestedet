@@ -31,9 +31,7 @@ class ListingController < ApplicationController
     end
 
     if listing.user == current_user
-      listing.remove_listingimages!
-      listing.save
-      listing.delete
+      listing.destroy
       return redirect_to listing_index_path, notice: 'Annonsen ble slettet'
     else
       return redirect_to listing_path(listing),
