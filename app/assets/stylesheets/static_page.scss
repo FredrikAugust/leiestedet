@@ -44,7 +44,10 @@ body, html {
 @media screen and (max-width: 660px) {
   .full-page-jumbotron>.content>* {
     width: 90%;
-    text-align: left;
+
+    &::not('.btn') {
+      text-align: left;
+    }
   }
 }
 

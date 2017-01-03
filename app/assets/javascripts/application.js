@@ -13,6 +13,4 @@
 //= require jquery
 //= require jquery_ujs
 //= require materialize
-//= require static_page
-//= require listing
-//= require user_location
+//= require_tree .
