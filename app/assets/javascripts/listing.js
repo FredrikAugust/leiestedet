@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function () {
+$(document).on('load', function () {
   $('.button-collapse').sideNav();
   $('.dropdown-button').dropdown();
 });
