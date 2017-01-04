@@ -20,9 +20,11 @@
     <%= render partial: 'shared/map', locals: { place_id: @listing.user.place_id } %>
   </div>
   <div class="listing-images col s12 m4">
-    <div class="card-panel">
+    <% if @listing.listingimages.any? %>
+      <div class="card-panel">
         <% @listing.listingimages.each do |image| %>
-          <%= image_tag image.url, class: 'listingimage responsive-img' %>
+          <%= image_tag image.url, class: 'listingimage responsive-img hoverable' %>
         <% end %>
-    </div>
+      </div>
+    <% end %>
 </div>
