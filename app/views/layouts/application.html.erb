@@ -14,11 +14,23 @@
   </head>
 
   <body>
-    <%= render partial: 'shared/navigation' %>
-
-    <div class="container">
-      <%= yield %>
+    <div <% if controller_name == 'static_page' %>class='navbar-fixed'<% end %>>
+      <%= render partial: 'shared/navigation' %>
     </div>
+
+    <% if controller_name != 'static_page' %>
+      <div class="container">
+    <% end %>
+
+    <%= yield %>
+
+    <% if controller_name != 'static_page' %>
+      </div>
+    <% end %>
+
+    <% if controller_name != 'sessions' and controller_name != 'registrations' %>
+      <%= render partial: 'shared/footer' %>
+    <% end %>
 
     <script>
       <% flash.each do |key, value| %>
