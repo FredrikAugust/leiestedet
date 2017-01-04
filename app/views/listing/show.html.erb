@@ -1,30 +1,10 @@
-<%# <h1><%= @listing.title %1></h1> %>
-<%# <div class="chip"><%= @listing.price %1>NOK</div> %>
-<%# <p class="small">Opprettet av: <%= link_to full_name(@listing.user), profile_path(id: @listing.user.id) %1></p> %>
-
-<%# <% if @listing.listingimages[0] %1> %>
-  <%#   <% @listing.listingimages.each do |image| %1> %>
-  <%#     <%= image_tag image.url, class: 'responsive-img' %1> %>
-  <%#   <% end %1> %>
-<%# <% else %1> %>
-  <%#   <em>Ingen bilder</em> %>
-  <%# <% end %1> %>
-
-<%# <%= render partial: 'shared/map', locals: { place_id: @listing.user.place_id } %1> %>
-
-<%# <h4>Beskrivelse</h4> %>
-
-<%# <p><%= @listing.description %1></p> %>
-
-<%# <% if @listing.user == current_user %1> %>
-  <%#   <hr> %>
-  <%#   <%= link_to "Slett annonse", listing_path(@listing), %>
-  <%#     method: :delete, class: "btn red darken-4" %1> %>
-  <%#   <%= link_to "Endre annonse", edit_listing_path(@listing), class: 'btn' %1> %>
-  <%# <% end %1> %>
+<div id="imagemodal" class="modal">
+  <div class="modal-content">
+  </div>
+</div>
 
 <div class="row listing-detail">
-  <div class="col s12 m7">
+  <div class="col s12 m8">
     <h2 class='listing-title'><%= @listing.title %></h2>
     <p class='listing-name'>av <%= link_to full_name(@listing.user), profile_path(id: @listing.user.id) %></p>
     <div class="chip"><%= @listing.price %> kr</div>
@@ -39,9 +19,10 @@
     </div>
     <%= render partial: 'shared/map', locals: { place_id: @listing.user.place_id } %>
   </div>
-  <div class="listing-images col s12 m5">
-    <% @listing.listingimages.each do |image| %>
-      <%= image_tag image.url, class: 'responsive-img' %>
-    <% end %>
-  </div>
+  <div class="listing-images col s12 m4">
+    <div class="card-panel">
+        <% @listing.listingimages.each do |image| %>
+          <%= image_tag image.url, class: 'listingimage responsive-img' %>
+        <% end %>
+    </div>
 </div>
