@@ -76,4 +76,4 @@ variations of grey in-between).
 
 ## License
 
-Leiestedet is released under the GNU AGPL-v3
+Leiestedet is released under the GNU AGPL-v3.0
