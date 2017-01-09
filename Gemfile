@@ -18,6 +18,7 @@ gem 'devise'
 # image uploading
 gem 'mini_magick'
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+gem 'will_paginate'
 
 group :development, :test do
   gem 'byebug', platform: :mri

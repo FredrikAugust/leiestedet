@@ -15,4 +15,18 @@ class Listing < ApplicationRecord
 
   # image uploading
   mount_uploaders :listingimages, ListingImagesUploader
+
+  def self.search(search_query)
+    listings = nil
+
+    if !search_query.nil?
+      listings = self.where('title ~* ? OR description ~* ?',
+                            search_query,
+                            search_query)
+    else
+      listings = self.all
+    end
+
+    return listings.order 'created_at DESC'
+  end
 end
