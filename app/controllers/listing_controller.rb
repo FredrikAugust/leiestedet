@@ -5,6 +5,12 @@ class ListingController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
+    if params[:sokeord]
+      return @listings = Listing.where('title ~* ? OR description ~* ?',
+                                       params[:sokeord],
+                                       params[:sokeord])
+    end
+
     @listings = Listing.order(created_at: :desc)
   end
 

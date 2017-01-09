@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'registrations' }
   resources :listing
 
+  get '/listing/:sokeord', to: 'listing#index'
+
   get 'profile', to: 'profile#show'
   get 'profile/:id', to: 'profile#show'
 
