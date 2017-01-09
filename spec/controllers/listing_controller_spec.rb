@@ -30,6 +30,32 @@ RSpec.describe ListingController, type: :controller do
 
       expect(assigns(:listings)).to eq(Listing.order(created_at: :desc))
     end
+
+    describe 'search' do
+      it 'not return listings that do not match the search' do
+        create(:listing, title: 'this is the test, alright?')
+
+        get :index, params: { sokeord: 'not the test' }
+
+        expect(assigns(:listings)).to_not include(Listing.find_by(title: 'this is the test, alright?'))
+      end
+
+      it 'return listings that match the search' do
+        create(:listing, title: 'this is the test, alright?')
+
+        get :index, params: { sokeord: 'this is the test' }
+
+        expect(assigns(:listings)).to include(Listing.find_by(title: 'this is the test, alright?'))
+      end
+
+      it 'returns all listings if search query is empty' do
+        listings = (0..10).map { create(:listing) }
+
+        get :index, params: { sokeord: '' }
+
+        expect(assigns(:listings)).to eq(listings)
+      end
+    end
   end
 
   describe 'new' do
