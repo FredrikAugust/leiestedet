@@ -28,7 +28,7 @@ RSpec.describe ListingController, type: :controller do
 
       get :index
 
-      expect(assigns(:listings)).to eq(Listing.order(created_at: :desc))
+      expect(assigns(:listings).first).to eq(Listing.last)
     end
 
     describe 'search' do
@@ -53,7 +53,7 @@ RSpec.describe ListingController, type: :controller do
 
         get :index, params: { sokeord: '' }
 
-        expect(assigns(:listings)).to eq(listings)
+        expect(assigns(:listings)).to eq(listings.sort_by(&:created_at).reverse)
       end
     end
   end

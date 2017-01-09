@@ -6,12 +6,14 @@ class ListingController < ApplicationController
 
   def index
     if params[:sokeord]
-      return @listings = Listing.where('title ~* ? OR description ~* ?',
+      @listings = Listing.where('title ~* ? OR description ~* ?',
                                        params[:sokeord],
                                        params[:sokeord])
+    else
+      @listings = Listing.all
     end
 
-    @listings = Listing.order(created_at: :desc)
+    @listings.order! 'created_at DESC'
   end
 
   def new
