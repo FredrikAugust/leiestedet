@@ -15,6 +15,10 @@
       <div class="row">
         <% if @listings.any? %>
           <%= render partial: 'shared/listing', collection: @listings, as: :listing %>
+        <% else %>
+          <div class="listing-placeholder">
+            <p class='grey-text'>Ingen annonser matcher ditt søk</p>
+          </div>
         <% end %>
       </div>
     </div>

@@ -28,9 +28,7 @@
       </div>
     <% end %>
 
-    <% if controller_name != 'sessions' and controller_name != 'registrations' %>
-      <%= render partial: 'shared/footer' %>
-    <% end %>
+    <%= render partial: 'shared/footer' %>
 
     <script>
       <% flash.each do |key, value| %>
