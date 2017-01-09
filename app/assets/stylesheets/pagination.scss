@@ -1,0 +1,13 @@
+.pagination {
+  text-align: center;
+
+  .disabled {
+    color: grey;
+  }
+
+  clear: both;
+
+  * {
+    font-style: normal !important;
+  }
+}

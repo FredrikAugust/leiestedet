@@ -16,17 +16,11 @@ class Listing < ApplicationRecord
   # image uploading
   mount_uploaders :listingimages, ListingImagesUploader
 
-  def self.search(search_query)
-    listings = nil
-
-    if !search_query.nil?
-      listings = self.where('title ~* ? OR description ~* ?',
-                            search_query,
-                            search_query)
+  def self.search(search_query, current_page)
+    if search_query
+      where('title ~* ? OR description ~* ?', search_query, search_query).paginate(page: current_page, per_page: 12).order('id DESC')
     else
-      listings = self.all
+      paginate(page: current_page, per_page: 12).order('id DESC')
     end
-
-    return listings.order 'created_at DESC'
   end
 end

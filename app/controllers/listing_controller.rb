@@ -5,7 +5,7 @@ class ListingController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @listings = Listing.search(params[:sokeord])
+    @listings = Listing.search(params[:sokeord], params[:side])
   end
 
   def new
