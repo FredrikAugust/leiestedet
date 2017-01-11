@@ -1,3 +1,12 @@
 nav {
   background-color: #607d8b !important;
 }
+
+#nav-mobile {
+  background-color: #607d8b !important;
+
+  * {
+    color: white !important;
+    text-shadow: none !important;
+  }
+}
