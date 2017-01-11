@@ -18,6 +18,11 @@
     <%= f.email_field :email %>
   </div>
 
+  <div class="field">
+    <%= f.label :telephone, 'Telefonnummer' %>
+    <%= f.text_field :telephone %>
+  </div>
+
   <%# <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %1> %>
     <%#   <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %1></div> %>
     <%# <% end %1> %>

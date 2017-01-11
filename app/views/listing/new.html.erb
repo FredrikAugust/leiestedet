@@ -6,17 +6,25 @@
       <%= raw concat_errors @listing.errors.messages %>
     </div>
   <% end %>
-  <%= f.label :title %>
+  <%= f.label :title, 'Tittel' %>
   <%= f.text_field :title, autofocus: true %>
 
-  <%= f.label :price %>
+  <%= f.label :price, 'Pris' %>
   <%= f.number_field :price, min: 0, max: 1000000 %>
 
-  <%= f.label :description %>
-  <%= f.text_area :description, class: 'materialize-textarea' %>
+  <%= f.label :description, 'Beskrivelse' %>
+  <%= f.text_area :description, class: 'materialize-textarea', placeholder:
+      'Skriv gjerne litt om produktet, jo mer du skriver jo større sannsynlighet er det for at noen finner produktet ditt.' %>
 
-  <%= f.label :listingimages %>
-  <%= f.file_field :listingimages, multiple: true %>
+  <div class="file-field input-field">
+    <div class="btn">
+      <span>Bilder</span>
+      <%= f.file_field :listingimages, multiple: true %>
+    </div>
+    <div class="file-path-wrapper">
+      <input class="file-path validate" type="text" placeholder="Last opp et eller fler bilder">
+    </div>
+  </div>
 
-  <%= f.submit 'Lag annonse', class: 'btn' %>
+  <%= f.submit 'Opprett annonse', class: 'btn' %>
 <% end %>
