@@ -55,11 +55,15 @@ body, html {
   nav {
     background-color: transparent;
     transition: background ease-in-out 0.3s;
+    box-shadow: none;
   }
 
-  * {
-    box-shadow: none !important;
+  .brand-logo, .nav-wrapper ul {
     text-shadow: 1px 1px black;
+  }
+
+  .dropdown-content * {
+    text-shadow: none !important;
   }
 }
 
