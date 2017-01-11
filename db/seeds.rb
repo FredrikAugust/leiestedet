@@ -6,15 +6,15 @@ locations = [
   "EhtPc2xvdmVpZW4sIFRyb25kaGVpbSwgTm9yZ2U"
 ]
 
-users = User.create([
-  {
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
-    email: Faker::Internet.email,
-    place_id: locations.sample,
-    password: 'password', password_confirmation: 'password'
-  }
-])
+User.create(
+  first_name: Faker::Name.first_name,
+  last_name: Faker::Name.last_name,
+  email: Faker::Internet.email,
+  telephone: '+12 345 67 890',
+  location: 'Oslo, Norway',
+  place_id: locations.sample,
+  password: 'password', password_confirmation: 'password'
+)
 
 listings = Listing.create([
   {

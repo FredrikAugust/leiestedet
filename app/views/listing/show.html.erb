@@ -16,7 +16,7 @@
     <br>
     <div class='listing-contactinfo'>
       <div><i class="material-icons">email</i> <%= @listing.user.email %></div>
-      <div><i class="material-icons">phone</i> TODO: Add telephone number to user model</div>
+      <div><i class="material-icons">phone</i> <%= @listing.user.telephone %></div>
     </div>
     <%= render partial: 'shared/map', locals: { place_id: @listing.user.place_id } %>
     <br>

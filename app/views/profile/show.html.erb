@@ -7,6 +7,7 @@
     <h3>Kontakt&shy;informasjon</h3>
     <ul>
       <li>Epost: <%= @user.email %></li>
+      <li>Telefon: <%= @user.telephone %></li>
     </ul>
     <%= render partial: 'shared/map', locals: { place_id: @user.place_id } %>
   </div>
