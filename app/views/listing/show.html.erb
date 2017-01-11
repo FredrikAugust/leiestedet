@@ -1,3 +1,4 @@
+<%# this will be implanted with an image once the user clicks an image %>
 <div id="imagemodal" class="modal">
   <div class="modal-content">
   </div>
@@ -18,6 +19,11 @@
       <div><i class="material-icons">phone</i> TODO: Add telephone number to user model</div>
     </div>
     <%= render partial: 'shared/map', locals: { place_id: @listing.user.place_id } %>
+    <br>
+    <% if current_user == @listing.user %>
+      <%= link_to 'Rediger annonse', edit_listing_path(@listing), class: 'btn' %>
+      <%= link_to 'Slett annonse', listing_path(@listing), method: :delete, class: 'btn red' %>
+    <% end %>
   </div>
   <div class="listing-images col s12 m4">
     <% if @listing.listingimages.any? %>

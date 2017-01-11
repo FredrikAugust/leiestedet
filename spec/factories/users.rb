@@ -3,6 +3,7 @@ FactoryGirl.define do
     first_name { Faker::Name.first_name }
     last_name { Faker::Name.last_name }
     email { "#{first_name}.#{last_name}@example.com".downcase }
+    telephone '12312312'
     place_id do
       [
         # these are all google place-ids

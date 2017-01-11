@@ -11,5 +11,8 @@ class User < ApplicationRecord
 
   validates :place_id, :location, length: { minimum: 1, maximum: 100 }
 
+  validates :telephone, length: { minimum: 8, maximum: 14 },
+    format: { with: /(\+\d{2}\s)?[\d\s]{8,10}/ }
+
   has_many :listings, dependent: :destroy
 end

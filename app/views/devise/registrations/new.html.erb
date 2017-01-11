@@ -19,6 +19,11 @@
   </div>
 
   <div class="field">
+    <%= f.label :telephone, 'Telefonnummer' %>
+    <%= f.text_field :telephone %>
+  </div>
+
+  <div class="field">
     <%= f.label :password, 'Passord' %>
     <% if @minimum_password_length %>
       <em>(minst <%= @minimum_password_length %> tegn)</em>

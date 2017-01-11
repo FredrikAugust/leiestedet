@@ -46,6 +46,33 @@ RSpec.describe User, type: :model do
       end
     end
 
+    context 'telephone' do
+      it 'fails to validate without a telephone number' do
+        @user.telephone = nil
+        expect(@user).not_to be_valid
+      end
+
+      it 'fails to validate if telephone number contains anything but numbers and +' do
+        @user.telephone = 'abcdabcd'
+        expect(@user).not_to be_valid
+      end
+
+      it 'is ok if the user specifies an area code' do
+        @user.telephone = '+47 999 22 777'
+        expect(@user).to be_valid
+      end
+
+      it 'fails if the number is longer than 14 chars' do
+        @user.telephone = '+999 888 999 888'
+        expect(@user).to_not be_valid
+      end
+
+      it 'fails if the number is shorter than 8 chars' do
+        @user.telephone = '8888888'
+        expect(@user).to_not be_valid
+      end
+    end
+
     context 'location' do
       it 'fails to validate without value' do
         @user.location = ''
