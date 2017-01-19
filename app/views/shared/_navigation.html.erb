@@ -1,6 +1,15 @@
 <nav>
   <div class="nav-wrapper container">
-    <a class="brand-logo" href="<%= root_path %>">Leiestedet</a>
+    <a href="<%= root_path %>">
+      <% if controller_name != 'static_page' %>
+        <img class="logo-image" src="<%= asset_path('logo.png') %>" alt="Logo">
+      <% else %>
+        <img class="logo-image" src="<%= asset_path('logo_white.png') %>" alt="Logo">
+      <% end %>
+    </a>
+    <a class="brand-logo" href="<%= root_path %>">
+      Leiestedet
+    </a>
 
     <%# dropdown structure for the logged in user %>
     <ul id="dropdown-user-logged-in" class="dropdown-content">

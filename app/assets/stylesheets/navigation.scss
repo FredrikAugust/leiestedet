@@ -3,10 +3,17 @@ nav {
 
   ul a, .brand-logo {
     color: #212121;
+    font-weight: 100;
   }
 
   box-shadow: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+
+  .logo-image {
+    height: 2.3em;
+    vertical-align: middle;
+    margin-right: 10px;
+  }
 }
 
 #nav-mobile {
