@@ -7,7 +7,7 @@
 <div class="row listing-detail">
   <div class="col s12 m8">
     <h2 class='listing-title'><%= @listing.title %></h2>
-    <p class='listing-name'>av <%= link_to full_name(@listing.user), profile_path(id: @listing.user.id) %></p>
+    <p class='listing-name grey-text'>Opprettet <%= @listing.created_at.strftime('%d/%m-%y') %> av <%= link_to full_name(@listing.user), profile_path(id: @listing.user.id) %></p>
     <div class="chip"><%= @listing.price %> kr</div>
     <p>
     <%= @listing.description %>
