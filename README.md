@@ -18,9 +18,9 @@ developer to do far less, and the users are less susceptible to being scammed.
 
 We also have Google maps integration to make it easier for our users to find
 one-another when they are going to rent a piece of clothing. This is done by
-having a form input with GMaps autocomplete on the registration page, and saving
-the unique ID for the place they select and rendering a map on the profile#show
-and listing#show pages.
+having a form input with Google maps auto complete on the registration page,
+and saving the unique ID for the place they select and rendering a map on the
+profile#show and listing#show pages.
 
 Another thing we put a lot of work into is the image uploading. To reduce the
 load times when using the page, we generate a 200x200 thumbnail version of the
@@ -33,6 +33,22 @@ to make.
 All the images will also be downscaled if they are too big (1280x720 is max
 resolution for an image, all images will retain their original aspect ration
 when downscaled), and all images are converted to JPEG.
+
+#### Feature list
+
+* Login and sign up page
+* Create and view listings
+* Search for listings
+* View listings on a paginated page, currently grouped by 12 results per page
+* About us page
+* Edit profile
+* Edit listing
+* Upload images to the listings
+* Contact information regarding the user, so a customer can easily contact the user to rent a product
+
+#### Database scheme
+
+This can be found here: "db/schema.rb"
 
 ### Further documentation
 
