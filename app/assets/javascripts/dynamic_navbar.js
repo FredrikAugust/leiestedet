@@ -1,6 +1,6 @@
 $(document).ready(function () {
   var h = $('.full-page-jumbotron').height();
-  $(window).on('wheel', function (e) {
+  $(window).on('scroll', function (e) {
     if ($(window).scrollTop() > 0) {
       $('.navbar-fixed nav').css('background', '#607d8b');
       $('.navbar-fixed nav *').css('text-shadow', 'none');
