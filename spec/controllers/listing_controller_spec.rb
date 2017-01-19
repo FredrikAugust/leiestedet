@@ -163,6 +163,14 @@ RSpec.describe ListingController, type: :controller do
       expect(response).to redirect_to(action: :new, controller: 'devise/sessions')
     end
 
+    it 'allows admin to delete, even if it belongs to someone else' do
+      sign_in create(:user, admin: true)
+
+      expect do
+        delete :destroy, params: { id: listing.id }
+      end.to change { Listing.count }.by(-1)
+    end
+
     it 'redirects to listing :index if listing does not exist' do
       sign_in listing.user
 

@@ -30,7 +30,7 @@ class ListingController < ApplicationController
       return redirect_to listing_index_path, notice: 'Den annonsen finnes ikke'
     end
 
-    if listing.user == current_user
+    if listing.user == current_user || current_user.admin
       listing.destroy
       return redirect_to listing_index_path, notice: 'Annonsen ble slettet'
     else
