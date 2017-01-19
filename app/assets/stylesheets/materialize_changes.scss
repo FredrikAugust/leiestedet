@@ -2,3 +2,16 @@
 #sidenav-overlay {
   display: none;
 }
+
+.btn {
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid rgba(0,0,0,0.7);
+  box-shadow: none;
+  color: #212121;
+}
+
+.btn:hover {
+  background-color: #212121;
+  color: white;
+}

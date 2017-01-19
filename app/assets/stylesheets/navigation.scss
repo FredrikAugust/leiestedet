@@ -1,12 +1,19 @@
 nav {
-  background-color: #607d8b;
+  background-color: white;
+
+  ul a, .brand-logo {
+    color: #212121;
+  }
+
+  box-shadow: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
 }
 
 #nav-mobile {
-  background-color: #607d8b !important;
+  background-color: #white !important;
 
   * {
-    color: white !important;
     text-shadow: none !important;
+    color: black;
   }
 }

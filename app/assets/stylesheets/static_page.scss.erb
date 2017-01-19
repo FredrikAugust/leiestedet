@@ -28,14 +28,21 @@ body, html {
       margin: auto;
       display: block;
       color: white;
-      text-shadow: 1px 1px black;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
       transition: text-shadow ease-in-out 0.5s;
     }
 
     .btn {
-      background-color: #546e7a;
       display: block;
       text-shadow: none;
+      transition: background ease-in-out 0.3s, color ease-in-out 0.3s;
+      border-color: white;
+    }
+
+    .btn:hover {
+      box-shadow: none;
+      background-color: white;
+      color: black;
     }
 
     *:not(:last-child) {
@@ -59,10 +66,15 @@ body, html {
     background-color: transparent;
     transition: background ease-in-out 0.5s;
     box-shadow: none;
+    border-bottom: 0;
+
+    ul a, .brand-logo {
+      color: white;
+    }
   }
 
   .brand-logo, .nav-wrapper ul {
-    text-shadow: 1px 1px black;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
   }
 
   .dropdown-content * {
