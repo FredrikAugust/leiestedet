@@ -6,6 +6,7 @@ class ListingController < ApplicationController
 
   def index
     @listings = Listing.search(params[:sokeord], params[:side])
+    @search_query = params[:sokeord]
   end
 
   def new
