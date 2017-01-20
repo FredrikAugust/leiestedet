@@ -16,6 +16,15 @@ input[type='text']#query_string {
   margin-top: 0;
 }
 
+form .card-panel {
+  box-shadow: none;
+  border: 1px solid rgba(0,0,0,0.4);
+
+  .active {
+    color: black;
+  }
+}
+
 // Listing on #index
 .listing{
   position: relative;
