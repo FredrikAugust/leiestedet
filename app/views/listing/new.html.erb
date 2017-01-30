@@ -3,9 +3,14 @@
 <%= form_for @listing, url: {action: :create} do |f| %>
   <% if @listing.errors.messages.length > 0 %>
     <div class="errors">
-      <%= raw concat_errors @listing.errors.messages %>
+      <% @listing.errors.messages.each do |key, value| %>
+        <% value.each do |message| %>
+          <span class='error'><%= h key %> <%= h message %></span>
+        <% end %>
+      <% end %>
     </div>
   <% end %>
+
   <%= f.label :title, 'Tittel' %>
   <%= f.text_field :title, autofocus: true %>
 
@@ -14,7 +19,7 @@
 
   <%= f.label :description, 'Beskrivelse' %>
   <%= f.text_area :description, class: 'materialize-textarea', placeholder:
-      'Skriv gjerne litt om produktet, jo mer du skriver jo større sannsynlighet er det for at noen finner produktet ditt.' %>
+    'Skriv gjerne litt om produktet, jo mer du skriver jo større sannsynlighet er det for at noen finner produktet ditt.' %>
 
   <div class="file-field input-field">
     <div class="btn">

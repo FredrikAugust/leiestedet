@@ -3,9 +3,14 @@
 <%= form_for @listing, url: {action: :update} do |f| %>
   <% if @listing.errors.messages.length > 0 %>
     <div class="errors">
-      <%= raw concat_errors @listing.errors.messages %>
+      <% @listing.errors.messages.each do |key, value| %>
+        <% value.each do |message| %>
+          <span class='error'><%= h key %> <%= h message %></span>
+        <% end %>
+      <% end %>
     </div>
   <% end %>
+
   <%= f.label :title %>
   <%= f.text_field :title %>
 
