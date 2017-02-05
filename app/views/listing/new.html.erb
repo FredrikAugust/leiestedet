@@ -5,7 +5,7 @@
     <div class="errors">
       <% @listing.errors.messages.each do |key, value| %>
         <% value.each do |message| %>
-          <span class='error'><%= h key %> <%= h message %></span>
+          <span class='error'><%= h @listing.class.human_attribute_name(key) %> <%= h message %></span>
         <% end %>
       <% end %>
     </div>
