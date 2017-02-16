@@ -17,8 +17,12 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 # image uploading
 gem 'mini_magick'
-gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'will_paginate'
+gem "fog"
+gem "fog-google"
+gem "google-api-client", ">= 0.6.2", "< 0.9"
+gem "mime-types"
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 
 group :development, :test do
   gem 'byebug', platform: :mri

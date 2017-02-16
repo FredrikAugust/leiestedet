@@ -1,0 +1,16 @@
+if Rails.env.test? or Rails.env.development?
+  CarrierWave.configure do |config|
+    config.storage = :file
+  end
+else
+  CarrierWave.configure do |config|
+    config.fog_provider = 'fog/google'                        # required
+    config.fog_credentials = {
+      provider: 'Google',
+      google_storage_access_key_id: 'GOOGBJQPAR5W2AI2VAFJ',
+      google_storage_secret_access_key: ENV["GOOGLE_STORAGE_SECRET"]
+    }
+    config.fog_directory = 'listingimages'
+    config.storage = :fog
+  end
+end
