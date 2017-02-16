@@ -21,7 +21,7 @@
     <%= render partial: 'shared/map', locals: { place_id: @listing.user.place_id } %>
     <br>
     <% if current_user == @listing.user || (current_user && current_user.admin) %>
-      <%= link_to 'Slett annonse', listing_path(@listing), method: :delete, class: 'btn red' %>
+      <%= link_to 'Slett annonse', listing_path(@listing), method: :delete, class: 'white-text btn red' %>
     <% end %>
     <% if current_user == @listing.user %>
       <%= link_to 'Rediger annonse', edit_listing_path(@listing), class: 'btn' %>

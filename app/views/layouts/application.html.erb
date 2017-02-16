@@ -14,26 +14,33 @@
   </head>
 
   <body>
-    <div <% if controller_name == 'static_page' %>class='navbar-fixed'<% end %>>
-      <%= render partial: 'shared/navigation' %>
-    </div>
-
     <% if controller_name != 'static_page' %>
-      <div class="container">
-    <% end %>
-
-    <%= yield %>
-
-    <% if controller_name != 'static_page' %>
-      </div>
-    <% end %>
-
-    <%= render partial: 'shared/footer' %>
-
-    <script>
-      <% flash.each do |key, value| %>
-        Materialize.toast("<%= value %>", 3000);
+      <div class="footer-compliant-body">
       <% end %>
-    </script>
+      <div <% if controller_name == 'static_page' %>class='navbar-fixed'<% end %>>
+        <%= render partial: 'shared/navigation' %>
+      </div>
+
+      <% if controller_name != 'static_page' %>
+        <div class="footer-compliant-body">
+          <div class="container flex-container">
+          <% end %>
+
+          <%= yield %>
+
+          <% if controller_name != 'static_page' %>
+            </div>
+          <% end %>
+
+          <%= render partial: 'shared/footer' %>
+          <% if controller_name != 'static_page' %>
+          </div>
+        <% end %>
+
+        <script>
+<% flash.each do |key, value| %>
+  Materialize.toast("<%= value %>", 3000);
+<% end %>
+        </script>
   </body>
 </html>

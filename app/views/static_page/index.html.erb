@@ -10,49 +10,34 @@
   </div>
 </div>
 
-<div class="container" id='about-us'>
-  <h2>Om oss</h2>
-  <div class="row">
-    <div class="col s12 m4">
-      <img src="http://lorempixel.com/400/300" alt="" class='responsive-img'>
-    </div>
-    <div class="col s12 m8">
-      <p class='about-us-text flow-text'>
-      Vi er en gruppe elever fra Elvebakken videregående skole som har startet
-      en ungdomsbedrift, <i>Leiestedet</i>. <i>Leiestedet</i> er en løsning på
-      kjøp og kast-forbruket av klær i dagens samfunn. Vi tilbyr en tjeneste
-      hvor man kan leie og leie ut klær, og med dette ønsker vi en mer sosialt
-      inkluderende og miljøvennlig klespolitikk.
-      </p>
+<div class='container'>
+  <div id='about-us'>
+    <h2>Om oss</h2>
+    <div class="row">
+      <div class="col s12 l9">
+        <p class='flow-text'>
+        Vi er en gruppe elever fra Elvebakken videregående skole som har startet
+        en ungdomsbedrift, <i>Leiestedet</i>. <i>Leiestedet</i> er en løsning på
+        kjøp og kast-forbruket av klær i dagens samfunn. Vi tilbyr en tjeneste
+        hvor man kan leie og leie ut klær, og med dette ønsker vi en mer sosialt
+        inkluderende og miljøvennlig klespolitikk.
+        </p>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="container" id='contact'>
-  <h2>Kontaktinformasjon</h2>
-  <div class="row">
-    <div class="col s12">
-      <p class='flow-text'>
-        <strong class="role">Daglig leder </strong>
-        <span class="name">Magnus Windelstad </span>
-        &lt;<a href="mailto:magnus1306@osloskolen.no" class="email">magnus1306@osloskolen.no</a>&gt;
-        <br>
-        <strong class="role">Styreleder og økonomiansvarlig </strong>
-        <span class="name">Elin Trommer </span>
-        &lt;<a href="mailto:elin0805@osloskolen.no" class="email">elin0805@osloskolen.no</a>&gt;
-        <br>
-        <strong class="role">Markedsføringssjef </strong>
-        <span class="name">Andrea Garbielsen </span>
-        &lt;<a href="mailto:andreah1612@osloskolen.no" class="email">andreah1612@osloskolen.no</a>&gt;
-        <br>
-        <strong class="role">Produktansvarlig </strong>
-        <span class="name">Jhowi Amaya </span>
-        &lt;<a href="mailto:amaga002@osloskolen.no" class="email">amaga002@osloskolen.no</a>&gt;
-        <br>
-        <strong class="role">Personalansvarlig </strong>
-        <span class="name">Tara Lu Steihaug </span>
-        &lt;<a href="mailto:tasta007@osloskolen.no" class="email">tasta007@osloskolen.no</a>&gt;
-      </p>
+  <div id='contact'>
+    <%# shy is for breaking words on smaller screens, really nice! %>
+    <h2>Kontakt&shy;informasjon</h2>
+    <div class="row">
+      <div class="col s12 l9">
+        <p class="flow-text card-panel">
+          Magnus Windelstad<br>
+          <a href="mailto:leiestedetub@gmail.com">leiestedetub@gmail</a><br>
+          97798971<br>
+        </p>
+        <%= render partial: 'shared/map', locals: { place_id: "ChIJq4FuGGRuQUYRGKaGfXsjSoI" } %>
+      </div>
     </div>
   </div>
 </div>

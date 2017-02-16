@@ -1,10 +1,16 @@
-body {
+.footer-compliant-body {
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
-.container, .full-page-jumbotron {
-  flex: 1 0 auto;
+.flex-container {
+  flex: auto;
+}
+
+footer {
+  flex: auto;
+  flex-grow: 0;
 }
 
 footer.page-footer {
