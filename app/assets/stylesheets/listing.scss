@@ -39,6 +39,14 @@ form .card-panel {
     top: 10px;
     left: 10px;
   }
+
+  h5 {
+    padding: 6px 6px 10px 6px;
+    margin: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
 }
 
 // Listing on listing#show
