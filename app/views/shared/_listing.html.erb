@@ -4,8 +4,7 @@
       <% if listing.listingimages[0] %>
         <%= image_tag listing.listingimages[0].thumb.url, class: 'z-depth-1 hoverable' %>
       <% else %>
-        <%# TODO %>
-        <%# <%= image_tag '', class: 'z-depth-1 hoverable' %1> %>
+        <%= image_tag 'filler_img.png', class: 'z-depth-1 hoverable' %>
       <% end %>
       <div class="price chip">
         <%= listing.price %> kr
