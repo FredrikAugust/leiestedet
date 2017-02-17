@@ -64,11 +64,16 @@ form .card-panel {
 
 .listing-detail .video-container {
   margin-top: 20px;
+  overflow: visible;
 }
 
 .listing-images {
   margin-top: 1.78rem;
   cursor: pointer;
+}
+
+.listing-images-mobile {
+  margin-bottom: 30px;
 }
 
 .modal {

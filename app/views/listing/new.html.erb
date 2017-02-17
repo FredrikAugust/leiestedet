@@ -14,12 +14,12 @@
   <%= f.label :title, 'Tittel' %>
   <%= f.text_field :title, autofocus: true %>
 
-  <%= f.label :price, 'Pris' %>
+  <%= f.label :price, 'Leiepris' %>
   <%= f.number_field :price, min: 0, max: 1000000 %>
 
   <%= f.label :description, 'Beskrivelse' %>
   <%= f.text_area :description, class: 'materialize-textarea', placeholder:
-    'Skriv gjerne litt om produktet, jo mer du skriver jo større sannsynlighet er det for at noen finner produktet ditt.' %>
+    'Beskriv plagget du leier ut; bruk gjerne hashtags for å gjøre det lettere å finne plagget for andre' %>
 
   <div class="file-field input-field">
     <div class="btn">
