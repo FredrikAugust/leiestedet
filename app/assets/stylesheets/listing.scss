@@ -30,7 +30,7 @@ form .card-panel {
   position: relative;
   margin-bottom: 10px;
 
-  img{
+  img {
     width: 100% !important;
   }
 
@@ -41,11 +41,12 @@ form .card-panel {
   }
 
   h5 {
-    padding: 6px 6px 10px 6px;
+    padding: 6px 6px 13px 13px;
     margin: 0;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    font-size: 1.5em;
   }
 }
 
