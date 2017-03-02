@@ -1,14 +1,15 @@
 <div class="col s6 m3">
   <a href="<%= listing_path(listing) %>">
-    <div class="listing">
+    <div class="listing z-depth-1">
       <% if listing.listingimages[0] %>
-        <%= image_tag listing.listingimages[0].thumb.url, class: 'z-depth-1 hoverable' %>
+        <%= image_tag listing.listingimages[0].thumb.url %>
       <% else %>
-        <%= image_tag 'filler_img.png', class: 'z-depth-1 hoverable' %>
+        <%= image_tag 'filler_img.png' %>
       <% end %>
       <div class="price chip">
         <%= listing.price %> kr
       </div>
+      <h5><%= listing.title %></h5>
     </div>
   </a>
 </div>

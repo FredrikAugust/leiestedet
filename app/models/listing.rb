@@ -11,10 +11,18 @@ class Listing < ApplicationRecord
 
   validates :user, presence: true
 
+  validate :validate_number_of_images
+
   belongs_to :user
 
   # image uploading
   mount_uploaders :listingimages, ListingImagesUploader
+
+  def validate_number_of_images
+    unless listingimages.count <= 5
+      errors.add(:listingimages, "maks 5 bilder per annonse")
+    end
+  end
 
   def self.search(search_query, current_page)
     if search_query

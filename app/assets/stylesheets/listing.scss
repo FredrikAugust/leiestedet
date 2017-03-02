@@ -30,7 +30,7 @@ form .card-panel {
   position: relative;
   margin-bottom: 10px;
 
-  img{
+  img {
     width: 100% !important;
   }
 
@@ -38,6 +38,15 @@ form .card-panel {
     position: absolute;
     top: 10px;
     left: 10px;
+  }
+
+  h5 {
+    padding: 6px 6px 13px 13px;
+    margin: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 1.5em;
   }
 }
 
@@ -56,11 +65,16 @@ form .card-panel {
 
 .listing-detail .video-container {
   margin-top: 20px;
+  overflow: visible;
 }
 
 .listing-images {
   margin-top: 1.78rem;
   cursor: pointer;
+}
+
+.listing-images-mobile {
+  margin-bottom: 30px;
 }
 
 .modal {

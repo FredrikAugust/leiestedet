@@ -12,6 +12,13 @@
     <p>
     <%= @listing.description %>
     </p>
+    <div class="listing-images listing-images-mobile col s12 m4 hide-on-med-and-up">
+      <% if @listing.listingimages.any? %>
+        <% @listing.listingimages.each do |image| %>
+          <%= image_tag image.url, class: 'listingimage responsive-img' %>
+        <% end %>
+      <% end %>
+    </div>
     <strong>Kontaktinformasjon</strong>
     <br>
     <div class='listing-contactinfo'>
@@ -27,11 +34,11 @@
       <%= link_to 'Rediger annonse', edit_listing_path(@listing), class: 'btn' %>
     <% end %>
   </div>
-  <div class="listing-images col s12 m4">
+  <div class="listing-images col s12 m4 hide-on-small-and-down">
     <% if @listing.listingimages.any? %>
       <div class="card-panel">
         <% @listing.listingimages.each do |image| %>
-          <%= image_tag image.url, class: 'listingimage responsive-img hoverable' %>
+          <%= image_tag image.url, class: 'listingimage responsive-img' %>
         <% end %>
       </div>
     <% end %>

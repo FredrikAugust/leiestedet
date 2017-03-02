@@ -32,3 +32,9 @@ nav {
     color: black;
   }
 }
+
+@media screen and (max-width: 660px) {
+  .logo-image {
+    display: none;
+  }
+}
