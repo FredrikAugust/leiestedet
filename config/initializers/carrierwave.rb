@@ -10,7 +10,7 @@ else
       google_storage_access_key_id: ENV["GOOGLE_STORAGE_KEY"],
       google_storage_secret_access_key: ENV["GOOGLE_STORAGE_SECRET"]
     }
-    config.fog_directory = 'leiestedetub-bilder'
+    config.fog_directory = 'leiestedet'
     config.storage = :fog
   end
 end
