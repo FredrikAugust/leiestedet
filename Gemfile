@@ -23,7 +23,6 @@ gem "fog-google"
 gem "google-api-client", ">= 0.6.2", "< 0.9"
 gem "mime-types"
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
-gem 'letsencrypt_plugin'
 
 group :development, :test do
   gem 'byebug', platform: :mri
