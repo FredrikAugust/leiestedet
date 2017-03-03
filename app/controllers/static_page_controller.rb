@@ -3,6 +3,6 @@ class StaticPageController < ApplicationController
   end
 
   def acme
-    render text: 'HtNm3RyyOPLCFVnavo9I1eYhUUAJn-l5sC4V66KUKUs.HPwFgKcETpKCbPfWZdosHOccGn-chMYAncgS_s2NKJk'
+    render text: ''
   end
 end
