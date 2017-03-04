@@ -19,9 +19,10 @@
 
   <%= f.label :description, 'Beskrivelse' %>
   <%= f.text_area :description, class: 'materialize-textarea', placeholder:
-    'Beskriv plagget du leier ut; bruk gjerne hashtags for å gjøre det lettere å finne plagget for andre' %>
+    'Her kan du skrive en kort beskrivelse av produktet ditt, hvor lenge du vil leie det ut og og hvilken tilstand produktet er i. (Eksempel: sort jakke fra H&M, leies ut i én uke, og er pent brukt.)' %>
 
   <div class="file-field input-field">
+    <em class='grey-text image-disclaimer'>Du kan ikke endre bildene etter at de er lastet opp</em>
     <div class="btn">
       <span>Bilder</span>
       <%= f.file_field :listingimages, multiple: true %>
