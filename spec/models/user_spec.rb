@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   before(:each) do
-    @user = build(:user)
+    @user = build(:user, first_name: "Håkon", last_name: "Rørerud")
   end
 
   context 'attribute validation' do

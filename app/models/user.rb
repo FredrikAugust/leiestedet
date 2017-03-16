@@ -4,10 +4,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :first_name, length: { minimum: 1, maximum: 30 },
-    format: { with: /\A[\w\-\'\s]+\z/ }
+    format: { with: /\A[æøå\w\-\'\s]+\z/ }
 
   validates :last_name, length: { minimum: 1, maximum: 30 },
-    format: { with: /\A[\w\-\'\s]+\z/ }
+    format: { with: /\A[æøå\w\-\'\s]+\z/ }
 
   validates :place_id, :location, length: { minimum: 1, maximum: 100 }
 
